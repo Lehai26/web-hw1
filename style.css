@@ -1,14 +1,28 @@
+ :root { 
+    --muted: #9ca3af;
+    --highlight: #fbbf24;
+    --line: #374151;
+    --bg: #141e30; 
+    --surface: #1f2b44; 
+    --text: #f5f5f7; 
+    --accent: #e7ff4d; 
+    --warn: #ff5a5f; 
+  --font-title: "Diphylleia", serif; 
+  --font-body: "Noto Sans KR", sans-serif; 
+  --gap:var(--gap) ;
+
+}
  body {
-    font-family: "Noto Sans KR", sans-serif;
+     font-family: var(--font-body);
     margin: 0;
     padding: 24px;
-    background-color: #111827;
-    color: #f9fafb;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /* 제목 */
 h1 {
-    font-family: "Diphylleia", serif;
+    font-family: var(--font-title);
     margin: 0;
 }
 
@@ -30,12 +44,12 @@ nav ul {
 }
 
 nav a {
-    color: #fff;
+    color: var(--text);
     text-decoration: none;
 }
 
 nav a:hover {
-    color: #fbbf24;
+    color: var(--highlight);
 }
 
 /* 히어로: 배경 이미지 */
@@ -52,7 +66,7 @@ nav a:hover {
     min-height: 40vh;
     padding: 24px;
     box-sizing: border-box;
-    color: #fff;
+    color:var(--text);
     border-radius: 12px;
 
     display: flex;
@@ -73,7 +87,7 @@ nav a:hover {
 .card {
     position: relative;
     min-width: 0;
-    background-color: #1f2937;
+    background-color: var(--surface);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -91,8 +105,8 @@ nav a:hover {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #fbbf24;
-    color: #111827;
+    background-color: var(--highlight);
+    color: var(--text);
     padding: 6px 10px;
     border-radius: 20px;
     font-weight: bold;
@@ -109,7 +123,7 @@ nav a:hover {
 }
 
 .year {
-    color: #9ca3af;
+    color: var(--muted);
     font-size: 14px;
 }
 
@@ -134,8 +148,8 @@ nav a:hover {
 footer {
     margin-top: 32px;
     padding-top: 20px;
-    border-top: 1px solid #374151;
-    color: #9ca3af;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.7;
 }
