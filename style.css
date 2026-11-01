@@ -9,7 +9,7 @@
     --warn: #ff5a5f; 
   --font-title: "Diphylleia", serif; 
   --font-body: "Noto Sans KR", sans-serif; 
-  --gap:var(--gap) ;
+  --gap: 20px;
 
 }
  body {
@@ -31,13 +31,13 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: var(--gap);
     margin-bottom: 24px;
 }
 
 nav ul {
     display: flex;
-    gap: 20px;
+    gap: var(--gap);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -80,7 +80,7 @@ nav a:hover {
 .board {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: var(--gap);
 }
 
 /* 영화 카드 */
@@ -99,12 +99,29 @@ nav a:hover {
     height: auto;
     display: block;
 }
+.card.no-poster .poster-fallback { 
+  aspect-ratio: 2 / 3; 
+  display: flex; align-items: center; justify-content: center; 
+  font-size: 5rem; font-family: var(--font-title); 
+  background: linear-gradient(135deg, var(--accent), var(--surface)); 
+} 
 
 /* 평점 배지 */
 .badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
+    background-color: var(--highlight);
+    color: var(--bg);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.rank {
+    position: absolute;
+    top: 12px;
+    left: 12px;
     background-color: var(--highlight);
     color: var(--text);
     padding: 6px 10px;
@@ -112,12 +129,15 @@ nav a:hover {
     font-weight: bold;
 }
 
+.change.up::before { content: "▲"; }
+.change.down::before { content: "▼"; }
+.change.new::before { content: "NEW"; }
 
 .info {
     padding: 16px;
 }
 
-.info h2 {
+.info h3 {
     margin-top: 0;
     margin-bottom: 8px;
 }
